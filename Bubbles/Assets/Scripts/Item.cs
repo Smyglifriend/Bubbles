@@ -2,27 +2,37 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    [SerializeField] private VoidEventChannelSO voidEventChannelSo;
+    [SerializeField] private VoidEventChannelSO clickItemVoidEventChannelSo;
+    [SerializeField] private GameObject inusedModel;
+    [SerializeField] private GameObject usedModel;
+    private int _countClick;
+
     private void Start()
     {
-        GetUnusedItem()
-            .gameObject
-            .SetActive(false);
+        _countClick = 0;
     }
 
     protected virtual void OnMouseDown()
     {
-        GetUnusedItem()
-            .SetActive(
-            true);
-        voidEventChannelSo.RaiseEvent();
+        if (_countClick == 1)
+            return;
+        if (!inusedModel.activeSelf)
+        {
+            usedModel.SetActive(false);
+            inusedModel.SetActive(true);
+        }
+        else
+        {
+            usedModel.SetActive(true);
+            inusedModel.SetActive(false);
+        }
+
+        clickItemVoidEventChannelSo.RaiseEvent();
+        _countClick = 1;
     }
 
-    private GameObject GetUnusedItem()
+    public void RefreshClickCounter()
     {
-        var modelTransform = transform.GetChild(0);
-        var unused = modelTransform.GetChild(0);
-
-        return unused.gameObject;
+        _countClick = 0;
     }
 }

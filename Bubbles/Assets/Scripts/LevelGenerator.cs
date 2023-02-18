@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SearchService;
 
 public class LevelGenerator : MonoBehaviour
 {
@@ -10,7 +7,7 @@ public class LevelGenerator : MonoBehaviour
 
     public void SetLevel(LevelData levelData)
     {
-            _level = levelData;
+        _level = levelData;
     }
 
     public void GenerateLevel()
@@ -31,18 +28,16 @@ public class LevelGenerator : MonoBehaviour
 
     public void HideLevel()
     {
-        var child = transform.GetChild(0);
-        if (!child.gameObject.activeSelf) return;
+        if (!_levelPrefab.activeSelf) return;
         
-        child.gameObject.SetActive(false);;
+        _levelPrefab.SetActive(false);
     }
     
     public void ShowLevel()
     {
-        var child = transform.GetChild(0);
-        if (child.gameObject.activeSelf) return;
+        if (_levelPrefab.activeSelf) return;
         
-        child.gameObject.SetActive(true);;
+        _levelPrefab.SetActive(true);;
     }
 
     public void DestroyLevel()

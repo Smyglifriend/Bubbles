@@ -8,7 +8,7 @@ public class LevelButtonGenerator : MonoBehaviour
     [SerializeField] private List<LevelData> levelDatas;
 
 
-    void Start()
+    public void GenerateButtons()
     {
         foreach (var levelData in levelDatas)
         {
