@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: LocalizationTable_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 813bf5960e3d6be4f9f3571fe55dc70d, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 101165203456
+    m_Localized: Just relax
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2585275301888
+    m_Localized: Level's name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3157168652288
+    m_Localized: Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 126704553721856
+    m_Localized: Continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 126929422942208
+    m_Localized: Play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 127015448117248
+    m_Localized: Main menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 127212177752064
+    m_Localized: Restart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 129695553847296
+    m_Localized: Pause
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

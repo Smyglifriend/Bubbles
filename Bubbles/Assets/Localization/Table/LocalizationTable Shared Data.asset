@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: LocalizationTable Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: LocalizationTable
+  m_TableCollectionNameGuidString: 813bf5960e3d6be4f9f3571fe55dc70d
+  m_Entries:
+  - m_Id: 101165203456
+    m_Key: ApplicationName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2585275301888
+    m_Key: LevelDescriptionName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3157168652288
+    m_Key: LevelDescriptionDescription
+    m_Metadata:
+      m_Items: []
+  - m_Id: 126704553721856
+    m_Key: ContinueButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 126929422942208
+    m_Key: PlayButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 127015448117248
+    m_Key: MainMenuButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 127212177752064
+    m_Key: RestartButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 129695553847296
+    m_Key: PauseButton
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 3129660165084938288
+  references:
+    version: 2
+    RefIds:
+    - rid: 3129660165084938288
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables,
+        asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1676551791934
