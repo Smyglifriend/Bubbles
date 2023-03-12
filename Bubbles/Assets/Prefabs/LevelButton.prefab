@@ -37,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0.000015258789}
-  m_SizeDelta: {x: 103.6, y: 94.3}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5506710927726471105
 CanvasRenderer:
@@ -143,6 +143,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5197194787086298641}
   - component: {fileID: 6506713161396315921}
+  - component: {fileID: 856109746508818451}
+  - component: {fileID: 8857280338710757106}
   m_Layer: 5
   m_Name: LevelButton
   m_TagString: Untagged
@@ -169,7 +171,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -394.57, y: 175.8}
-  m_SizeDelta: {x: 100, y: 92.3}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6506713161396315921
 MonoBehaviour:
@@ -186,3 +188,49 @@ MonoBehaviour:
   levelDataEventChanelSo: {fileID: 11400000, guid: e1e68c1fb05223e418187979d94ea3a1,
     type: 2}
   levelData: {fileID: 0}
+--- !u!114 &856109746508818451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8135718194314450934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a0507aa1be6f5c4890b7602b03c8452, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelDatas:
+  - {fileID: 11400000, guid: 373b9d3fd2743e341bed2d997b2255e3, type: 2}
+  - {fileID: 11400000, guid: c2d8ae22c8777744a9a9f5f806b3dd2f, type: 2}
+  duration: 0.5
+  startScale: {x: 1, y: 1}
+  targetScale: {x: 1.2, y: 1.2}
+--- !u!114 &8857280338710757106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8135718194314450934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac5f2a650fff3274c93b58e7def2e8b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _channel: {fileID: 11400000, guid: e1e68c1fb05223e418187979d94ea3a1, type: 2}
+  OnEventRaised:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 856109746508818451}
+        m_TargetAssemblyTypeName: LevelButtonAnimator, Assembly-CSharp
+        m_MethodName: ChooseButton
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
