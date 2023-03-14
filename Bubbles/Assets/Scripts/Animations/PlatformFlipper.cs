@@ -46,7 +46,6 @@ public class PlatformFlipper : MonoBehaviour
 
     private void RefreshItem()
     {
-        Debug.Log("Refresh");
         flipPlatformCounterEventChannelSo.RaiseEvent();
     }
 }

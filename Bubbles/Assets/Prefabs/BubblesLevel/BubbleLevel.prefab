@@ -1558,7 +1558,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b17439a0e55504c40975f670822ad63d,
         type: 3}
       propertyPath: m_Name
-      value: BubbleWrapBse Variant
+      value: BubbleLevel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:

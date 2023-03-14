@@ -15,5 +15,5 @@ MonoBehaviour:
   levelName: Soap balls
   description: 
   icon: {fileID: 0}
-  lvlPrefab: {fileID: 5420432689031246932, guid: bcd4665ba793da0438daa8b6f7d330b7,
+  lvlPrefab: {fileID: 4595471836941887877, guid: 8944177a091354546ac98970bdeba0f3,
     type: 3}

@@ -6,6 +6,9 @@ public class BallsSpawner : MonoBehaviour
 {
     [SerializeField] private List<GameObject> balls;
     [SerializeField] private float spawnSecond = 1f;
+    [SerializeField] private GameObject perantForSpawn;
+
+    private Transform currentTransform;
 
 
     private void Start()
@@ -17,7 +20,8 @@ public class BallsSpawner : MonoBehaviour
     {
         while (true)
         {
-            Instantiate(balls[Random.Range(0, balls.Count)], transform.position, Quaternion.identity);
+            currentTransform = transform;
+            Instantiate(balls[Random.Range(0, balls.Count)], currentTransform.position, Quaternion.identity, perantForSpawn.transform);
 
             yield return new WaitForSeconds(spawnSecond);
         }

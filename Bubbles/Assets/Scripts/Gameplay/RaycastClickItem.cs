@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class RaycastClickItem : MonoBehaviour
 {
-    [SerializeField] private VoidEventChannelSO clickItemVoidEventChannelSo;
     [SerializeField] private LayerMask mask;
 
     Camera _camera;

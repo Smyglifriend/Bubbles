@@ -54,6 +54,14 @@ MonoBehaviour:
     m_Localized: Menu
     m_Metadata:
       m_Items: []
+  - m_Id: 9030231795597312
+    m_Localized: Soap balls
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9030249529114624
+    m_Localized: Pop soap balls
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

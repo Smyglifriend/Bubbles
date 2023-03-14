@@ -23,14 +23,15 @@ public class BallHesitation : MonoBehaviour
     }
 
     void Hesitation(float zAmplitude, float zTimePeriod, float yAmplitude)
-    {
+    {   
         var currentTransform = transform;
+        pivot = pivotObject.transform.position;
 
         var nextPos = currentTransform.position;
         nextPos.y = pivot.y + yAmplitude * Mathf.Sin(((Mathf.PI * 2) / timePeriod) * timeSinceStart);
         nextPos.z = pivot.z + zAmplitude * Mathf.Sin(((Mathf.PI * 2) / zTimePeriod) * timeSinceStart);
         timeSinceStart += Time.deltaTime;
-        pivot = pivotObject.transform.position;
+        
         currentTransform.position = nextPos;
     }
 }

@@ -9,7 +9,7 @@ public class LevelGenerator : MonoBehaviour
     private GameObject _levelPrefab;
     private Vector3 _spawnPopItPosition = new(-0.3f, -0.5f, -2.1f);
     private Vector3 _spawnBubblePosition = new(-0.3f, 1.0f, -3f);
-    private Vector3 _spawnSoapBallsPosition = new(-0.4f, 1.0f, -7f);
+    private Vector3 _spawnSoapBallsPosition = new(0, 0, 0);
 
 
     private void Start()
@@ -53,7 +53,7 @@ public class LevelGenerator : MonoBehaviour
     {
         if (_levelPrefab.activeSelf) return;
         
-        _levelPrefab.SetActive(true);;
+        _levelPrefab.SetActive(true);
     }
 
     public void DestroyLevel()
@@ -74,6 +74,6 @@ public class LevelGenerator : MonoBehaviour
 
     private void InstantiateSoapBallsLevel()
     {
-        _levelPrefab = Instantiate(_level.LvlPrefab, _spawnSoapBallsPosition, Quaternion.identity);
+        _levelPrefab = Instantiate(_level.LvlPrefab, _spawnSoapBallsPosition, Quaternion.identity, transform);
     }
 }
