@@ -4,6 +4,7 @@ using UnityEngine.Localization.Settings;
 
 public class LocalSelector : MonoBehaviour
 {
+    [SerializeField] VoidEventChannelSO chengedLanguageVoidEventChannel;
     private bool active = false;
     private int _id;
 
@@ -29,5 +30,6 @@ public class LocalSelector : MonoBehaviour
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[localId];
         PlayerPrefs.SetInt("LocalKey", localId);
         active= false;
+        chengedLanguageVoidEventChannel.RaiseEvent();
     }
 }

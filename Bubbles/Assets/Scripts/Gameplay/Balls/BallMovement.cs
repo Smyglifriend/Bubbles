@@ -16,21 +16,23 @@ public class BallMovement : MonoBehaviour
     private Vector3 _endPosition;
     private int _countTargets;
     private Vector3 _centerOffset;
-    private float timeSinceStart;
+    private float _timeSinceStart;
 
 
     private void Start()
     {
+        Debug.Log("ball"+transform.position);
         _currentTransform = transform;
+        Debug.Log(transform.position);
         _startPostion = new Vector3(_currentTransform.position.x, _currentTransform.position.y);
         _endPosition = new Vector3(_currentTransform.position.x * -1, _currentTransform.position.y * -1);
         _centerOffset = new Vector3(0, 1, 0);
-        timeSinceStart = (3 * timePeriod) / 4;
+        _timeSinceStart = (3 * timePeriod) / 4;
 
         StartCoroutine(Movement(_startPostion, _inermediatePosition, _centerOffset, duration));
     }
 
-    IEnumerator Movement(Vector3 start, Vector3 target, Vector3 centerOffset,  float duration)
+    IEnumerator Movement(Vector3 start, Vector3 target, Vector3 centerOffset, float duration)
     {
         var center = (start + target) * 0.5F;
         center -= centerOffset;
@@ -41,25 +43,23 @@ public class BallMovement : MonoBehaviour
         var elapsedTime = 0f;
 
         while (elapsedTime < duration)
-        { 
+        {
             var slerpPos = Vector3.Slerp(startRelCenter, endRelCenter, elapsedTime / duration);
-            var nextPos = new Vector3(0, 0 ,0);
-            nextPos.y = yAmplitude * Mathf.Sin(((Mathf.PI * 2) / timePeriod) * timeSinceStart);
-            nextPos.z = zAmplitude * Mathf.Sin(((Mathf.PI * 2) / timePeriod) * timeSinceStart);
+            var nextPos = new Vector3(0, 0, 0);
+            nextPos.y = yAmplitude * Mathf.Sin(((Mathf.PI * 2) / timePeriod) * _timeSinceStart);
+            nextPos.z = zAmplitude * Mathf.Sin(((Mathf.PI * 2) / timePeriod) * _timeSinceStart);
             slerpPos += nextPos;
             _currentTransform.position = slerpPos;
             _currentTransform.position += center;
-            
-
 
             elapsedTime += Time.deltaTime;
-            timeSinceStart += Time.deltaTime;
-            
+            _timeSinceStart += Time.deltaTime;
+
             yield return null;
         }
         _countTargets++;
-
-        StartCoroutine(Movement(_currentTransform.position, _endPosition, new Vector3( 0, -1, 0), duration));
+        _timeSinceStart = 0;
+        StartCoroutine(Movement(_currentTransform.position, _endPosition, new Vector3(0, -1, 0), duration));
 
         if (_countTargets == 2)
         {

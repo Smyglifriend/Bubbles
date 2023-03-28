@@ -59,6 +59,10 @@ MonoBehaviour:
     m_Key: Soap balls_Description
     m_Metadata:
       m_Items: []
+  - m_Id: 14127365377130496
+    m_Key: New Entry
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

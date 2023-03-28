@@ -6,7 +6,7 @@ public class PlatformFlipper : MonoBehaviour
 
     private Animation _rotateAnimation;
     private int _inactiveChildrenCount;
-    private int _childrenCount = 30;
+    private int _childrenCount = 63;
     private bool _isFlipped;
     
 
@@ -25,7 +25,6 @@ public class PlatformFlipper : MonoBehaviour
     public void UpdateInactiveChildrenCount()
     {
         _inactiveChildrenCount += 1;
-        Debug.Log(_inactiveChildrenCount);
     }
 
     private void FlipPlatform()

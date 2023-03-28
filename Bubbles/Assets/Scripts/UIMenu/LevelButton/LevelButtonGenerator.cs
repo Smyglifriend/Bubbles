@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LevelButtonGenerator : MonoBehaviour
 {
-    [SerializeField] private GameObject level;
+    [SerializeField] private GameObject levelButtonPrefab;
     [SerializeField] private List<LevelData> levelDatas;
 
 
@@ -12,10 +12,10 @@ public class LevelButtonGenerator : MonoBehaviour
     {
         foreach (var levelData in levelDatas)
         {
-            var levelButton = level.GetComponent<LevelButton>();
+            var levelButton = levelButtonPrefab.GetComponent<LevelButton>();
             levelButton.ApplyLevelData(levelData);
             
-            Instantiate(level, transform.position, Quaternion.identity, transform);
+            Instantiate(levelButtonPrefab, transform.position, Quaternion.identity, transform);
         }
     }
 }

@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal.Internal;
 
 public class LevelGenerator : MonoBehaviour
 {
@@ -7,9 +9,9 @@ public class LevelGenerator : MonoBehaviour
 
     private LevelData _level;
     private GameObject _levelPrefab;
-    private Vector3 _spawnPopItPosition = new(-0.3f, -0.5f, -2.1f);
-    private Vector3 _spawnBubblePosition = new(-0.3f, 1.0f, -3f);
-    private Vector3 _spawnSoapBallsPosition = new(0, 0, 0);
+    private Vector3 _spawnBubblePosition = new(0f, -0.6f, 7.6f);
+    private Vector3 _spawnPopItPosition = new(0f, -1.4f, 8.5f);
+    private Vector3 _spawnSoapBallsPosition = new(0f, 0f, 14f);
 
 
     private void Start()
@@ -64,16 +66,58 @@ public class LevelGenerator : MonoBehaviour
 
     private void InstantiateBubbleLevel()
     {
+        Debug.Log(Screen.height + "x" + Screen.width);
+        if (Screen.height <= 800 && Screen.width <= 480)
+        {
+            SetCameraPostion(new Vector3(0f, 0f, 0f));
+        }
+        else if (Screen.height <= 2160 && Screen.width <= 1080)
+        {
+            SetCameraPostion(new Vector3(0f, 0f, -2f));
+        }
+        else if (Screen.height <= 2340 && Screen.width <= 1080)
+        {
+            SetCameraPostion(new Vector3(0f, 0f, -3f));
+        }
+        else if (Screen.height <= 1080 && Screen.width <= 2160)
+        {
+            SetCameraPostion(new Vector3(0f, 0f, 2f));
+        }
+        else if (Screen.height <= 1080 && Screen.width <= 2340)
+        {
+            SetCameraPostion(new Vector3(0f, -1f, 3f));
+        }
+        else if (Screen.height <= 1440 && Screen.width <= 2960)
+        {
+            SetCameraPostion(new Vector3(0f, -1f, 3f));
+        }
+
         _levelPrefab = Instantiate(_level.LvlPrefab, _spawnBubblePosition, Quaternion.Euler(-180f, 0, 0), transform);
     }
 
     private void InstantiatePopItLevel()
     {
+        if (Screen.height <= 2340 && Screen.width <= 1080)
+        {
+            SetCameraPostion(new Vector3(0f, 0f, -1.43f));
+        }
+        else if (Screen.height <= 1080 && Screen.width <= 2340)
+        {
+            SetCameraPostion(new Vector3(0f, -0.3f, 1.42f));
+        }
+
         _levelPrefab = Instantiate(_level.LvlPrefab, _spawnPopItPosition, Quaternion.Euler(-50f, 0, 0), transform);
+
+        Debug.Log(Screen.width);
     }
 
     private void InstantiateSoapBallsLevel()
     {
         _levelPrefab = Instantiate(_level.LvlPrefab, _spawnSoapBallsPosition, Quaternion.identity, transform);
+    }
+
+    private void SetCameraPostion(Vector3 position)
+    {
+        Camera.main.transform.position = position;
     }
 }

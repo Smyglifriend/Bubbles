@@ -48,6 +48,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 9
+  zAmplitude: 0.5
+  yAmplitude: 1
+  timePeriod: 2
+  spawner: {fileID: 0}
 --- !u!114 &840015050354415241
 MonoBehaviour:
   m_ObjectHideFlags: 0
