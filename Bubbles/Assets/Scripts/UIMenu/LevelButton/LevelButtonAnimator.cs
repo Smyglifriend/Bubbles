@@ -11,6 +11,7 @@ public class LevelButtonAnimator : MonoBehaviour
 
     public void ChooseButton(LevelData currenButton)
     {
+        StopAllCoroutines();
         if (currentLevelData.name == currenButton.name)
         {
             StartCoroutine(ZoomButton(targetScale, duration));

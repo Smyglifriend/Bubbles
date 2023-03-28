@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Net;
 using TMPro;
@@ -18,14 +19,15 @@ public class BallMovement : MonoBehaviour
     private Vector3 _centerOffset;
     private float _timeSinceStart;
 
+    
 
     private void Start()
     {
-        Debug.Log("ball"+transform.position);
+        Debug.Log("ball"+transform.localPosition);
         _currentTransform = transform;
         Debug.Log(transform.position);
-        _startPostion = new Vector3(_currentTransform.position.x, _currentTransform.position.y);
-        _endPosition = new Vector3(_currentTransform.position.x * -1, _currentTransform.position.y * -1);
+        _startPostion = new Vector3(_currentTransform.position.x, _currentTransform.position.y,_currentTransform.position.z);
+        _endPosition = new Vector3(_currentTransform.position.x * -1, _currentTransform.position.y * -1, _currentTransform.position.z);
         _centerOffset = new Vector3(0, 1, 0);
         _timeSinceStart = (3 * timePeriod) / 4;
 
@@ -48,7 +50,7 @@ public class BallMovement : MonoBehaviour
             var nextPos = new Vector3(0, 0, 0);
             nextPos.y = yAmplitude * Mathf.Sin(((Mathf.PI * 2) / timePeriod) * _timeSinceStart);
             nextPos.z = zAmplitude * Mathf.Sin(((Mathf.PI * 2) / timePeriod) * _timeSinceStart);
-            slerpPos += nextPos;
+            //slerpPos += nextPos;
             _currentTransform.position = slerpPos;
             _currentTransform.position += center;
 
