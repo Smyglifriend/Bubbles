@@ -18,21 +18,11 @@ public class BallsSpawner : MonoBehaviour
 
     IEnumerator SpawnBubbles()
     {
-        currentTransform = transform;
-        var ball = Instantiate(balls[0], currentTransform.position, Quaternion.identity, perantForSpawn.transform);
-        Debug.Log(ball.transform.position);
-        yield return null;
-
+        while (true)
+        {
+            currentTransform = transform;
+            Instantiate(balls[Random.Range(0, balls.Count)], currentTransform.position, Quaternion.identity, perantForSpawn.transform);
+            yield return new WaitForSeconds(spawnSecond);
+        }
     }
-    //IEnumerator SpawnBubbles()
-    //{
-    //    while (true)
-    //    {
-    //        currentTransform = transform;
-    //        var ball = Instantiate(balls[Random.Range(0, balls.Count)], currentTransform.position, Quaternion.identity, perantForSpawn.transform);
-    //        Debug.Log(ball.transform.position);
-    //        yield return new WaitForSeconds(spawnSecond);
-    //    }
-
-    //}
 }
