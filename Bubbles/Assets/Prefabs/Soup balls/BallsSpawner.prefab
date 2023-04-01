@@ -50,6 +50,7 @@ MonoBehaviour:
   - {fileID: 4087727650203307911, guid: e57f49caaef335c4d9b05b77ba7203e4, type: 3}
   - {fileID: 1693260320559978690, guid: 08ea61e8b22c5ed4bbc02946e97aedb3, type: 3}
   spawnSecond: 2.5
+  perantForSpawn: {fileID: 0}
 --- !u!114 &8048608030031903392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,9 +63,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6380a8f47f1222f42abed19102a6e0b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  checkPoints: []
   duration: 5

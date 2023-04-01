@@ -1,3 +1,4 @@
+using NaughtyAttributes.Test;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal.Internal;
@@ -66,7 +67,6 @@ public class LevelGenerator : MonoBehaviour
 
     private void InstantiateBubbleLevel()
     {
-        Debug.Log(Screen.height + "x" + Screen.width);
         if (Screen.height <= 800 && Screen.width <= 480)
         {
             SetCameraPostion(new Vector3(0f, 0f, 0f));
@@ -106,9 +106,7 @@ public class LevelGenerator : MonoBehaviour
             SetCameraPostion(new Vector3(0f, -0.3f, 1.42f));
         }
 
-        _levelPrefab = Instantiate(_level.LvlPrefab, _spawnPopItPosition, Quaternion.Euler(-50f, 0, 0), transform);
-
-        Debug.Log(Screen.width);
+        _levelPrefab = Instantiate(_level.LvlPrefab, _spawnPopItPosition, Quaternion.Euler(0, 0, 0), transform);
     }
 
     private void InstantiateSoapBallsLevel()

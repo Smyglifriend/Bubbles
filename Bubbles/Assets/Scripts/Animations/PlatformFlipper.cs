@@ -3,16 +3,17 @@ using UnityEngine;
 public class PlatformFlipper : MonoBehaviour
 {
     [SerializeField] private VoidEventChannelSO flipPlatformCounterEventChannelSo;
+    [SerializeField] private GameObject model;
 
     private Animation _rotateAnimation;
     private int _inactiveChildrenCount;
-    private int _childrenCount = 63;
+    private int _childrenCount = 30;
     private bool _isFlipped;
     
 
     void Start()
     {
-        _rotateAnimation = GetComponent<Animation>();
+        _rotateAnimation = model.gameObject.GetComponent<Animation>();
     }
     
     void Update()
