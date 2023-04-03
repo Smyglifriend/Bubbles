@@ -13,6 +13,7 @@ public class BallsSpawner : MonoBehaviour
 
     private void Start()
     {
+        spawnSecond = 1f;
         StartCoroutine(SpawnBubbles());
     }
 

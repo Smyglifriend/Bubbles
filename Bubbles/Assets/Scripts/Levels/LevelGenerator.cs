@@ -73,11 +73,11 @@ public class LevelGenerator : MonoBehaviour
         }
         else if (Screen.height <= 2160 && Screen.width <= 1080)
         {
-            SetCameraPostion(new Vector3(0f, 0f, -2f));
+            SetCameraPostion(new Vector3(0f, 0f, -3f));
         }
         else if (Screen.height <= 2340 && Screen.width <= 1080)
         {
-            SetCameraPostion(new Vector3(0f, 0f, -3f));
+            SetCameraPostion(new Vector3(0f, 0f, -4f));
         }
         else if (Screen.height <= 1080 && Screen.width <= 2160)
         {
