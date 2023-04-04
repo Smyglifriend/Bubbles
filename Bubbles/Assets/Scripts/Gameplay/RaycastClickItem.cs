@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class RaycastClickItem : MonoBehaviour
 {
-    [SerializeField] private LayerMask mask;
+    [SerializeField] private LayerMask maskItem;
 
     Camera _camera;
 
@@ -20,7 +20,7 @@ public class RaycastClickItem : MonoBehaviour
             var ray = _camera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit, 1000, mask))
+            if (Physics.Raycast(ray, out hit, 1000, maskItem))
             {
                 var item = hit.transform.gameObject.GetComponent<IClickable>();
                 item?.ClickItem();

@@ -13,8 +13,13 @@ public class BallsSpawner : MonoBehaviour
 
     private void Start()
     {
-        spawnSecond = 1f;
+        spawnSecond = 0.1f;
         StartCoroutine(SpawnBubbles());
+    }
+
+    private void Update()
+    {
+        spawnSecond = Random.Range(3,5);
     }
 
     IEnumerator SpawnBubbles()

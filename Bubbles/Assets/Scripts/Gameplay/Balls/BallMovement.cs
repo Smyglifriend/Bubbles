@@ -13,7 +13,7 @@ public class BallMovement : MonoBehaviour
 
     private Transform _currentTransform;
     private Vector3 _startPostion;
-    private Vector3 _inermediatePosition = new Vector3(0f, 0f, 14f);
+    private Vector3 _inermediatePosition;
     private Vector3 _endPosition;
     private int _countTargets;
     private Vector3 _centerOffset;
@@ -28,6 +28,7 @@ public class BallMovement : MonoBehaviour
         _endPosition = new Vector3(_currentTransform.position.x * -1, _currentTransform.position.y * -1, _currentTransform.position.z);
         _centerOffset = new Vector3(0, 1, 0);
         _timeSinceStart = (3 * timePeriod) / 4;
+        _inermediatePosition = new Vector3(UnityEngine.Random.Range(0,3), UnityEngine.Random.Range(0, 3), 14f);
 
         StartCoroutine(Movement(_startPostion, _inermediatePosition, _centerOffset, duration));
     }

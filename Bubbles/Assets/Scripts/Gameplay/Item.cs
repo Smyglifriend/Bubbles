@@ -12,6 +12,8 @@ public class Item : MonoBehaviour, IClickable
 
     void Start()
     {
+        usedModel.SetActive(true);
+        inusedModel.SetActive(true);
         _countClick = 0;
     }
 
@@ -22,11 +24,9 @@ public class Item : MonoBehaviour, IClickable
         if (!inusedModel.activeSelf)
         {
             usedModel.SetActive(false);
-            inusedModel.SetActive(true);
         }
         else
         {
-            usedModel.SetActive(true);
             inusedModel.SetActive(false);
         }
 
@@ -34,13 +34,14 @@ public class Item : MonoBehaviour, IClickable
         _countClick = 1;
     }
 
-    public void RefreshClickCounter()
-    {
-        _countClick = 0;
-    }
+    //public void RefreshClickCounter()
+    //{
+        
+    //}
 
     public void RefreshItem()
     {
+        _countClick = 0;
         inusedModel.SetActive(true);
     }
 }

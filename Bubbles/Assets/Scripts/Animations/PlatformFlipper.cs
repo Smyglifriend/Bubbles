@@ -5,14 +5,21 @@ public class PlatformFlipper : MonoBehaviour
     [SerializeField] private VoidEventChannelSO flipPlatformCounterEventChannelSo;
     [SerializeField] private GameObject model;
 
+    [SerializeField] private GameObject balls;
+    [SerializeField] private GameObject balls2;
+
+
     private Animation _rotateAnimation;
     private int _inactiveChildrenCount;
     private int _childrenCount = 30;
     private bool _isFlipped;
+    private bool _isFirstFlip;
     
 
     void Start()
     {
+        balls2.SetActive(false);
+        _isFirstFlip = true;
         _rotateAnimation = model.gameObject.GetComponent<Animation>();
     }
     
@@ -46,6 +53,19 @@ public class PlatformFlipper : MonoBehaviour
 
     private void RefreshItem()
     {
+        if (_isFirstFlip)
+        {
+            balls2.SetActive(true);
+            balls.SetActive(false);
+            _isFirstFlip = false;
+        }
+        else
+        {
+            balls2.SetActive(false);
+            balls.SetActive(true);
+            _isFirstFlip = true;
+        }
+        
         flipPlatformCounterEventChannelSo.RaiseEvent();
     }
 }

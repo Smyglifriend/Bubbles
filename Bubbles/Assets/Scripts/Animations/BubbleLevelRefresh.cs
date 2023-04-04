@@ -26,7 +26,6 @@ public class BubbleLevelRefresh : MonoBehaviour
     public void UpdateInactiveChildrenCount()
     {
         _inactiveChildrenCount += 1;
-        Debug.Log(_inactiveChildrenCount);
     }
 
     private void RefreshPlatform()

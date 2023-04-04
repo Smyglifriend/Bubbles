@@ -48,6 +48,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 10
+  zAmplitude: 0.2
+  yAmplitude: 1
+  timePeriod: 4
 --- !u!114 &7094478850269155782
 MonoBehaviour:
   m_ObjectHideFlags: 0

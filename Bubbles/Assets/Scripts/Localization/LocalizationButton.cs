@@ -27,11 +27,11 @@ public class LocalizationButton : MonoBehaviour
     {
         if (_buttonId == 1)
         {
-            _imageComp.sprite = EnFlag;
+            _imageComp.sprite = RuFlag;
         }
         else
         {
-            _imageComp.sprite = RuFlag;
+            _imageComp.sprite = EnFlag;
             _buttonId = 0;
         }
         PlayerPrefs.SetInt("ButtonKey", _buttonId);

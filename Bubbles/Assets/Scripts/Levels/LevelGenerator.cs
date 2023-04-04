@@ -73,11 +73,15 @@ public class LevelGenerator : MonoBehaviour
         }
         else if (Screen.height <= 2160 && Screen.width <= 1080)
         {
-            SetCameraPostion(new Vector3(0f, 0f, -3f));
+            SetCameraPostion(new Vector3(0f, 0f, -3.5f));
         }
         else if (Screen.height <= 2340 && Screen.width <= 1080)
         {
-            SetCameraPostion(new Vector3(0f, 0f, -4f));
+            SetCameraPostion(new Vector3(0f, 0f, -4.5f));
+        }
+        else if (Screen.height <= 2960 && Screen.width <= 1440)
+        {
+            SetCameraPostion(new Vector3(0f, 0f, -4.5f));
         }
         else if (Screen.height <= 1080 && Screen.width <= 2160)
         {
@@ -85,12 +89,13 @@ public class LevelGenerator : MonoBehaviour
         }
         else if (Screen.height <= 1080 && Screen.width <= 2340)
         {
-            SetCameraPostion(new Vector3(0f, -1f, 3f));
+            SetCameraPostion(new Vector3(0f, -0.52f, 3f));
         }
         else if (Screen.height <= 1440 && Screen.width <= 2960)
         {
-            SetCameraPostion(new Vector3(0f, -1f, 3f));
+            SetCameraPostion(new Vector3(0f, -0.52f, 3f));
         }
+
 
         _levelPrefab = Instantiate(_level.LvlPrefab, _spawnBubblePosition, Quaternion.Euler(-180f, 0, 0), transform);
     }
@@ -101,9 +106,17 @@ public class LevelGenerator : MonoBehaviour
         {
             SetCameraPostion(new Vector3(0f, 0f, -1.43f));
         }
+        else if(Screen.height <= 2960 && Screen.width <= 1080)
+        {
+            SetCameraPostion(new Vector3(0f, 0f, -1.43f));
+        }
         else if (Screen.height <= 1080 && Screen.width <= 2340)
         {
             SetCameraPostion(new Vector3(0f, -0.3f, 1.42f));
+        }
+        else if (Screen.height <= 1440 && Screen.width <= 2960)
+        {
+            SetCameraPostion(new Vector3(0f, -1f, 3f));
         }
 
         _levelPrefab = Instantiate(_level.LvlPrefab, _spawnPopItPosition, Quaternion.Euler(0, 0, 0), transform);
@@ -117,5 +130,6 @@ public class LevelGenerator : MonoBehaviour
     private void SetCameraPostion(Vector3 position)
     {
         Camera.main.transform.position = position;
+        Debug.Log(Camera.main.transform.position);
     }
 }
