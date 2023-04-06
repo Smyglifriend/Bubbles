@@ -8,10 +8,20 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] private LevelDataEventChanelSO chooseButtonlevelDataEventChanelSo;
     [SerializeField] private LevelData defaultLevel;
 
+    [SerializeField] private Camera camera;
+    [SerializeField] private float specialValue = 1;
+    [SerializeField] private float baseSpecialValue = 1;
+
+    private void Update()
+    {
+        camera.fieldOfView = baseSpecialValue + (float)Screen.height / Screen.width * specialValue;
+        Debug.Log((float)Screen.height / Screen.width);
+    }
+
     private LevelData _level;
     private GameObject _levelPrefab;
-    private Vector3 _spawnBubblePosition = new(0f, -0.6f, 7.6f);
-    private Vector3 _spawnPopItPosition = new(0f, -1.4f, 8.5f);
+    private Vector3 _spawnBubblePosition = new(0f, -0.21f, 7.6f);
+    private Vector3 _spawnPopItPosition = new(0f, -0.3f, 8.5f);
     private Vector3 _spawnSoapBallsPosition = new(0f, 0f, 14f);
 
 
@@ -67,63 +77,93 @@ public class LevelGenerator : MonoBehaviour
 
     private void InstantiateBubbleLevel()
     {
-        if (Screen.height <= 800 && Screen.width <= 480)
+        //if (Screen.height <= 800 && Screen.width <= 480)
+        //{
+        //    SetCameraPostion(new Vector3(0f, 0f, 0f));
+        //}
+        //else if (Screen.height <= 2160 && Screen.width <= 1080)
+        //{
+        //    SetCameraPostion(new Vector3(0f, 0f, -3.5f));
+        //}
+        //else if (Screen.height <= 2340 && Screen.width <= 1080)
+        //{
+        //    SetCameraPostion(new Vector3(0f, 0f, -4.5f));
+        //}
+        //else if (Screen.height <= 2960 && Screen.width <= 1440)
+        //{
+        //    SetCameraPostion(new Vector3(0f, 0f, -4.5f));
+        //}
+        //else if (Screen.height <= 1080 && Screen.width <= 2160)
+        //{
+        //    SetCameraPostion(new Vector3(0f, 0f, 2f));
+        //}
+        //else if (Screen.height <= 1080 && Screen.width <= 2340)
+        //{
+        //    SetCameraPostion(new Vector3(0f, -0.52f, 3f));
+        //}
+        //else if (Screen.height <= 1440 && Screen.width <= 2960)
+        //{
+        //    SetCameraPostion(new Vector3(0f, -0.52f, 3f));
+        //}
+        if ((float)Screen.height / Screen.width > 1)
         {
-            SetCameraPostion(new Vector3(0f, 0f, 0f));
+            specialValue = 34.81f;
         }
-        else if (Screen.height <= 2160 && Screen.width <= 1080)
+        else
         {
-            SetCameraPostion(new Vector3(0f, 0f, -3.5f));
-        }
-        else if (Screen.height <= 2340 && Screen.width <= 1080)
-        {
-            SetCameraPostion(new Vector3(0f, 0f, -4.5f));
-        }
-        else if (Screen.height <= 2960 && Screen.width <= 1440)
-        {
-            SetCameraPostion(new Vector3(0f, 0f, -4.5f));
-        }
-        else if (Screen.height <= 1080 && Screen.width <= 2160)
-        {
-            SetCameraPostion(new Vector3(0f, 0f, 2f));
-        }
-        else if (Screen.height <= 1080 && Screen.width <= 2340)
-        {
-            SetCameraPostion(new Vector3(0f, -0.52f, 3f));
-        }
-        else if (Screen.height <= 1440 && Screen.width <= 2960)
-        {
-            SetCameraPostion(new Vector3(0f, -0.52f, 3f));
+            specialValue = 73.3f;
         }
 
+        camera.fieldOfView = baseSpecialValue + (float)Screen.height / Screen.width * specialValue;
+        Debug.Log((float)Screen.height / Screen.width);
 
         _levelPrefab = Instantiate(_level.LvlPrefab, _spawnBubblePosition, Quaternion.Euler(-180f, 0, 0), transform);
     }
 
     private void InstantiatePopItLevel()
     {
-        if (Screen.height <= 2340 && Screen.width <= 1080)
+        //if (Screen.height <= 2340 && Screen.width <= 1080)
+        //{
+        //    SetCameraPostion(new Vector3(0f, 0f, -1.43f));
+        //}
+        //else if(Screen.height <= 2960 && Screen.width <= 1080)
+        //{
+        //    SetCameraPostion(new Vector3(0f, 0f, -1.43f));
+        //}
+        //else if (Screen.height <= 1080 && Screen.width <= 2340)
+        //{
+        //    SetCameraPostion(new Vector3(0f, -0.3f, 1.42f));
+        //}
+        //else if (Screen.height <= 1440 && Screen.width <= 2960)
+        //{
+        //    SetCameraPostion(new Vector3(0f, -1f, 3f));
+        ////}
+        if ((float)Screen.height / Screen.width > 1)
         {
-            SetCameraPostion(new Vector3(0f, 0f, -1.43f));
+            specialValue = 31.4f;
         }
-        else if(Screen.height <= 2960 && Screen.width <= 1080)
+        else
         {
-            SetCameraPostion(new Vector3(0f, 0f, -1.43f));
+            specialValue = 60.2f;
         }
-        else if (Screen.height <= 1080 && Screen.width <= 2340)
-        {
-            SetCameraPostion(new Vector3(0f, -0.3f, 1.42f));
-        }
-        else if (Screen.height <= 1440 && Screen.width <= 2960)
-        {
-            SetCameraPostion(new Vector3(0f, -1f, 3f));
-        }
+
+        camera.fieldOfView = baseSpecialValue + (float)Screen.height / Screen.width * specialValue;
 
         _levelPrefab = Instantiate(_level.LvlPrefab, _spawnPopItPosition, Quaternion.Euler(0, 0, 0), transform);
     }
 
     private void InstantiateSoapBallsLevel()
     {
+        if ((float)Screen.height / Screen.width > 1)
+        {
+            specialValue = 29.3f;
+        }
+        else
+        {
+            specialValue = 65.9f;
+        }
+        camera.fieldOfView = baseSpecialValue + (float)Screen.height / Screen.width * specialValue;
+     
         _levelPrefab = Instantiate(_level.LvlPrefab, _spawnSoapBallsPosition, Quaternion.identity, transform);
     }
 
