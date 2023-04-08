@@ -77,74 +77,37 @@ public class LevelGenerator : MonoBehaviour
 
     private void InstantiateBubbleLevel()
     {
-        //if (Screen.height <= 800 && Screen.width <= 480)
-        //{
-        //    SetCameraPostion(new Vector3(0f, 0f, 0f));
-        //}
-        //else if (Screen.height <= 2160 && Screen.width <= 1080)
-        //{
-        //    SetCameraPostion(new Vector3(0f, 0f, -3.5f));
-        //}
-        //else if (Screen.height <= 2340 && Screen.width <= 1080)
-        //{
-        //    SetCameraPostion(new Vector3(0f, 0f, -4.5f));
-        //}
-        //else if (Screen.height <= 2960 && Screen.width <= 1440)
-        //{
-        //    SetCameraPostion(new Vector3(0f, 0f, -4.5f));
-        //}
-        //else if (Screen.height <= 1080 && Screen.width <= 2160)
-        //{
-        //    SetCameraPostion(new Vector3(0f, 0f, 2f));
-        //}
-        //else if (Screen.height <= 1080 && Screen.width <= 2340)
-        //{
-        //    SetCameraPostion(new Vector3(0f, -0.52f, 3f));
-        //}
-        //else if (Screen.height <= 1440 && Screen.width <= 2960)
-        //{
-        //    SetCameraPostion(new Vector3(0f, -0.52f, 3f));
-        //}
-        if ((float)Screen.height / Screen.width > 1)
+        if ((float)Screen.height / Screen.width <= 1.2f && (float)Screen.height / Screen.width >= 0.8f)
+        {
+            specialValue = 43.34f;
+        }
+        else if((float)Screen.height / Screen.width > 1)
         {
             specialValue = 34.81f;
         }
         else
         {
-            specialValue = 73.3f;
+            specialValue = 85.8f;
         }
 
         camera.fieldOfView = baseSpecialValue + (float)Screen.height / Screen.width * specialValue;
-        Debug.Log((float)Screen.height / Screen.width);
 
         _levelPrefab = Instantiate(_level.LvlPrefab, _spawnBubblePosition, Quaternion.Euler(-180f, 0, 0), transform);
     }
 
     private void InstantiatePopItLevel()
     {
-        //if (Screen.height <= 2340 && Screen.width <= 1080)
-        //{
-        //    SetCameraPostion(new Vector3(0f, 0f, -1.43f));
-        //}
-        //else if(Screen.height <= 2960 && Screen.width <= 1080)
-        //{
-        //    SetCameraPostion(new Vector3(0f, 0f, -1.43f));
-        //}
-        //else if (Screen.height <= 1080 && Screen.width <= 2340)
-        //{
-        //    SetCameraPostion(new Vector3(0f, -0.3f, 1.42f));
-        //}
-        //else if (Screen.height <= 1440 && Screen.width <= 2960)
-        //{
-        //    SetCameraPostion(new Vector3(0f, -1f, 3f));
-        ////}
-        if ((float)Screen.height / Screen.width > 1)
+        if ((float)Screen.height / Screen.width <= 1.2f && (float)Screen.height / Screen.width >= 0.8f)
+        {
+            specialValue = 39.2f;
+        }
+        else if((float)Screen.height / Screen.width > 1)
         {
             specialValue = 31.4f;
         }
         else
         {
-            specialValue = 60.2f;
+            specialValue = 77.6f;
         }
 
         camera.fieldOfView = baseSpecialValue + (float)Screen.height / Screen.width * specialValue;
@@ -154,7 +117,11 @@ public class LevelGenerator : MonoBehaviour
 
     private void InstantiateSoapBallsLevel()
     {
-        if ((float)Screen.height / Screen.width > 1)
+        if ((float)Screen.height / Screen.width <= 1.2f && (float)Screen.height / Screen.width >= 0.8f)
+        {
+            specialValue = 57f;
+        }
+        else if((float)Screen.height / Screen.width > 1)
         {
             specialValue = 29.3f;
         }
