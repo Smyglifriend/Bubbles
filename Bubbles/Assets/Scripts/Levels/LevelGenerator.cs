@@ -21,7 +21,7 @@ public class LevelGenerator : MonoBehaviour
     private LevelData _level;
     private GameObject _levelPrefab;
     private Vector3 _spawnBubblePosition = new(0f, -0.21f, 7.6f);
-    private Vector3 _spawnPopItPosition = new(0f, -0.3f, 8.5f);
+    private Vector3 _spawnPopItPosition = new(0f, 0.18f, 8.5f);
     private Vector3 _spawnSoapBallsPosition = new(0f, 0f, 14f);
 
 
@@ -119,23 +119,23 @@ public class LevelGenerator : MonoBehaviour
     {
         if ((float)Screen.height / Screen.width <= 1.2f && (float)Screen.height / Screen.width >= 1f)
         {
-            specialValue = 43.34f;
+            specialValue = 34.06f;
         }
         else if ((float)Screen.height / Screen.width <= 1f && (float)Screen.height / Screen.width >= 0.79f)
         {
-            specialValue = 44.57f;
+            specialValue = 36.99f;
         }
         else if ((float)Screen.height / Screen.width >= 0.5f && (float)Screen.height / Screen.width <= 0.6f)
         {
-            specialValue = 66.17f;
+            specialValue = 51.78f;
         }
         else if ((float)Screen.height / Screen.width >= 0.6f && (float)Screen.height / Screen.width <= 0.689f)
         {
-            specialValue = 54.02f;
+            specialValue = 43.32f;
         }
         else if ((float)Screen.height / Screen.width >= 0.7f && (float)Screen.height / Screen.width <= 0.79f)
         {
-            specialValue = 60.7f;
+            specialValue = 43.55f;
         }
         else if ((float)Screen.height / Screen.width >= 1.2f)
         {
@@ -147,7 +147,7 @@ public class LevelGenerator : MonoBehaviour
         }
         else
         {
-            specialValue = 78.1f;
+            specialValue = 62.69f;
         }
 
         camera.fieldOfView = baseSpecialValue + (float)Screen.height / Screen.width * specialValue;
