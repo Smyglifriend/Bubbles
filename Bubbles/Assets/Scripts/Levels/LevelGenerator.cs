@@ -81,6 +81,14 @@ public class LevelGenerator : MonoBehaviour
         {
             specialValue = 43.34f;
         }
+        else if ((float)Screen.height / Screen.width >= 0.7f)
+        {
+            specialValue = 53f;
+        }
+        if ((float)Screen.height / Screen.width <= 1.3f)
+        {
+            specialValue = 38.74f;
+        }
         else if((float)Screen.height / Screen.width > 1)
         {
             specialValue = 34.81f;
@@ -101,6 +109,14 @@ public class LevelGenerator : MonoBehaviour
         {
             specialValue = 39.2f;
         }
+        else if ((float)Screen.height / Screen.width >= 0.7f)
+        {
+            specialValue = 57.64f;
+        }
+        if ((float)Screen.height / Screen.width <= 1.3f)
+        {
+            specialValue = 39.55f;
+        }
         else if((float)Screen.height / Screen.width > 1)
         {
             specialValue = 31.4f;
@@ -109,7 +125,7 @@ public class LevelGenerator : MonoBehaviour
         {
             specialValue = 77.6f;
         }
-
+       
         camera.fieldOfView = baseSpecialValue + (float)Screen.height / Screen.width * specialValue;
 
         _levelPrefab = Instantiate(_level.LvlPrefab, _spawnPopItPosition, Quaternion.Euler(0, 0, 0), transform);
