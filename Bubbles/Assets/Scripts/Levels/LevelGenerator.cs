@@ -121,25 +121,25 @@ public class LevelGenerator : MonoBehaviour
         {
             specialValue = 43.34f;
         }
-        else if ((float)Screen.height / Screen.width <= 1f && (float)Screen.height / Screen.width >= 0.8f)
+        else if ((float)Screen.height / Screen.width <= 1f && (float)Screen.height / Screen.width >= 0.79f)
         {
-            specialValue = 56.6f;
+            specialValue = 44.57f;
         }
         else if ((float)Screen.height / Screen.width >= 0.5f && (float)Screen.height / Screen.width <= 0.6f)
         {
-            specialValue = 79.22f;
+            specialValue = 66.17f;
         }
         else if ((float)Screen.height / Screen.width >= 0.6f && (float)Screen.height / Screen.width <= 0.689f)
         {
-            specialValue = 67.8f;
+            specialValue = 54.02f;
         }
-        else if ((float)Screen.height / Screen.width >= 0.7f && (float)Screen.height / Screen.width <= 0.8f)
+        else if ((float)Screen.height / Screen.width >= 0.7f && (float)Screen.height / Screen.width <= 0.79f)
         {
             specialValue = 60.7f;
         }
         else if ((float)Screen.height / Screen.width >= 1.2f)
         {
-            specialValue = 38.74f;
+            specialValue = 31.34f;
         }
         else if ((float)Screen.height / Screen.width >= 1f && (float)Screen.height / Screen.width <= 1.1f)
         {
@@ -147,7 +147,7 @@ public class LevelGenerator : MonoBehaviour
         }
         else
         {
-            specialValue = 85.8f;
+            specialValue = 78.1f;
         }
 
         camera.fieldOfView = baseSpecialValue + (float)Screen.height / Screen.width * specialValue;
