@@ -77,19 +77,31 @@ public class LevelGenerator : MonoBehaviour
 
     private void InstantiateBubbleLevel()
     {
-        if ((float)Screen.height / Screen.width <= 1.2f && (float)Screen.height / Screen.width >= 0.8f)
+        if ((float)Screen.height / Screen.width <= 1.2f && (float)Screen.height / Screen.width >= 1f)
         {
             specialValue = 43.34f;
         }
-        else if ((float)Screen.height / Screen.width >= 0.7f)
+        else if ((float)Screen.height / Screen.width <= 1f && (float)Screen.height / Screen.width >= 0.8f)
         {
-            specialValue = 53f;
+            specialValue = 56.6f;
         }
-        if ((float)Screen.height / Screen.width <= 1.3f)
+        else if ((float)Screen.height / Screen.width >= 0.5f && (float)Screen.height / Screen.width <= 0.6f)
+        {
+            specialValue = 79.22f;
+        }
+        else if ((float)Screen.height / Screen.width >= 0.6f && (float)Screen.height / Screen.width <= 0.689f)
+        {
+            specialValue = 67.8f;
+        }
+        else if ((float)Screen.height / Screen.width >= 0.7f && (float)Screen.height / Screen.width <= 0.8f)
+        {
+            specialValue = 60.7f;
+        }
+        else if ((float)Screen.height / Screen.width >= 1.2f)
         {
             specialValue = 38.74f;
         }
-        else if((float)Screen.height / Screen.width > 1)
+        else if((float)Screen.height / Screen.width >= 1f && (float)Screen.height / Screen.width <= 1.1f )
         {
             specialValue = 34.81f;
         }
@@ -105,27 +117,39 @@ public class LevelGenerator : MonoBehaviour
 
     private void InstantiatePopItLevel()
     {
-        if ((float)Screen.height / Screen.width <= 1.2f && (float)Screen.height / Screen.width >= 0.8f)
+        if ((float)Screen.height / Screen.width <= 1.2f && (float)Screen.height / Screen.width >= 1f)
         {
-            specialValue = 39.2f;
+            specialValue = 43.34f;
         }
-        else if ((float)Screen.height / Screen.width >= 0.7f)
+        else if ((float)Screen.height / Screen.width <= 1f && (float)Screen.height / Screen.width >= 0.8f)
         {
-            specialValue = 57.64f;
+            specialValue = 56.6f;
         }
-        if ((float)Screen.height / Screen.width <= 1.3f)
+        else if ((float)Screen.height / Screen.width >= 0.5f && (float)Screen.height / Screen.width <= 0.6f)
         {
-            specialValue = 39.55f;
+            specialValue = 79.22f;
         }
-        else if((float)Screen.height / Screen.width > 1)
+        else if ((float)Screen.height / Screen.width >= 0.6f && (float)Screen.height / Screen.width <= 0.689f)
         {
-            specialValue = 31.4f;
+            specialValue = 67.8f;
+        }
+        else if ((float)Screen.height / Screen.width >= 0.7f && (float)Screen.height / Screen.width <= 0.8f)
+        {
+            specialValue = 60.7f;
+        }
+        else if ((float)Screen.height / Screen.width >= 1.2f)
+        {
+            specialValue = 38.74f;
+        }
+        else if ((float)Screen.height / Screen.width >= 1f && (float)Screen.height / Screen.width <= 1.1f)
+        {
+            specialValue = 34.81f;
         }
         else
         {
-            specialValue = 77.6f;
+            specialValue = 85.8f;
         }
-       
+
         camera.fieldOfView = baseSpecialValue + (float)Screen.height / Screen.width * specialValue;
 
         _levelPrefab = Instantiate(_level.LvlPrefab, _spawnPopItPosition, Quaternion.Euler(0, 0, 0), transform);
