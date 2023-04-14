@@ -3,6 +3,7 @@ using UnityEngine;
 public class LevelGenerator : MonoBehaviour
 {
     [SerializeField] private LevelDataEventChanelSO chooseButtonlevelDataEventChanelSo;
+    [SerializeField] private VoidEventChannelSO changedResolutionVoidEventChannelSO;
     [SerializeField] private LevelData defaultLevel;
     [SerializeField] private Camera camera;
     [SerializeField] private float specialValue;
@@ -19,9 +20,7 @@ public class LevelGenerator : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log((float)Screen.height / Screen.width);
         if (_currentScreenWidth == Screen.width && _currentScreenHeight == Screen.height) return;
-        Debug.Log("TURN");
         SetCameraPostion(_level);
     }
 
@@ -91,6 +90,7 @@ public class LevelGenerator : MonoBehaviour
 
     private void InstantiateSoapBallsLevel()
     {
+        camera.fieldOfView = 60f;
         _levelPrefab = Instantiate(_level.LvlPrefab, _spawnSoapBallsPosition, Quaternion.identity, transform);
     }
 
@@ -174,18 +174,9 @@ public class LevelGenerator : MonoBehaviour
         }
         else if (_levelData.LevelName == "Soap balls")
         {
-            if ((float)Screen.height / Screen.width <= 1.2f && (float)Screen.height / Screen.width >= 0.8f)
-            {
-                specialValue = 57f;
-            }
-            else if ((float)Screen.height / Screen.width > 1)
-            {
-                specialValue = 29.3f;
-            }
-            else
-            {
-                specialValue = 65.9f;
-            }
+            camera.fieldOfView = 60f;
+            changedResolutionVoidEventChannelSO.RaiseEvent();
+            return;
         }
         camera.fieldOfView = baseSpecialValue + (float)Screen.height / Screen.width * specialValue;
     }
