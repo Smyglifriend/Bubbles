@@ -21,6 +21,7 @@ public class LevelGenerator : MonoBehaviour
     {
         Debug.Log((float)Screen.height / Screen.width);
         if (_currentScreenWidth == Screen.width && _currentScreenHeight == Screen.height) return;
+        Debug.Log("TURN");
         SetCameraPostion(_level);
     }
 
@@ -40,6 +41,7 @@ public class LevelGenerator : MonoBehaviour
 
     public void GenerateLevel()
     {
+        SetCameraPostion(_level);
         switch (_level.LevelName)
         {
             case "Bubble":
@@ -94,6 +96,8 @@ public class LevelGenerator : MonoBehaviour
 
     private void SetCameraPostion(LevelData _levelData)
     {
+        _currentScreenWidth = Screen.width;
+        _currentScreenHeight = Screen.height;
         if (_levelData.LevelName == "Bubble")
         {
             if ((float)Screen.height / Screen.width <= 1.2f && (float)Screen.height / Screen.width >= 1f)
